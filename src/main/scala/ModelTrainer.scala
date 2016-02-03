@@ -17,6 +17,7 @@ import org.apache.spark.sql.SQLContext
 import org.apache.spark.sql.functions._
 
 import scala.io.Source
+import scala.sys.process._
 
 /**
   * Created by avishaylivne on 1/17/16.
@@ -36,7 +37,7 @@ object MLlibDriver {
 
         predictionsPath: If set, apply existing model on data to predict labels and save predictions in this path.
                          Else (default), train new model on labeled data.
-|   """
+    """
 
   def main(args: Array[String]): Unit = {
     if (args.length < 4 || args.length > 5) {
